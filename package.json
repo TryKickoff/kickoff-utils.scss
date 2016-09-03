@@ -1,0 +1,33 @@
+{
+  "name": "kickoff-utils.scss",
+  "title": "Kickoff Sass Functions and Mixins",
+  "description": "Sass utility functions and mixins for the Kickoff framework",
+  "version": "1.0.0",
+  "homepage": "http://trykickoff.com",
+  "repo": "https://github.com/trykickoff/kickoff-utils.scss",
+  "main": "index.scss",
+  "style": "index.scss",
+  "authors": [
+    {
+      "name": "Zander Martineau",
+      "url": "http://martineau.tv"
+    }
+  ],
+  "contributors": [
+    "Github contributors <https://github.com/trykickoff/kickoff-utils.scss/graphs/contributors>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trykickoff/kickoff-utils.scss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trykickoff/kickoff-utils.scss/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=4.0"
+  },
+  "keywords": [
+    "⚽"
+  ]
+}

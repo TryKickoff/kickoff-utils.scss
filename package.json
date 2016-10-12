@@ -2,7 +2,7 @@
   "name": "kickoff-utils.scss",
   "title": "Kickoff Sass Functions and Mixins",
   "description": "Sass utility functions and mixins for the Kickoff framework",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "http://trykickoff.com",
   "repo": "https://github.com/trykickoff/kickoff-utils.scss",
   "main": "index.scss",
@@ -29,5 +29,13 @@
   },
   "keywords": [
     "⚽"
-  ]
+  ],
+  "scripts": {
+    "release-patch": "release-it --non-interactive -p patch",
+    "release-minor": "release-it --non-interactive -p minor",
+    "release-major": "release-it --non-interactive -p major"
+  },
+  "optionalDependencies": {
+    "release-it": "2.4.0"
+  }
 }

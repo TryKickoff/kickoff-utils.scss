@@ -1,0 +1,12 @@
+/**
+ * Multiply
+ * =================
+ * Multiply any value
+ *
+ * Usage:
+ * multiply(15, 2)
+ * multiply($baseline, 1.5)
+ */
+@function multiply($initial, $multiply) {
+	@return $multiply * $initial;
+}

@@ -1,12 +1,12 @@
 /**
  * Usage:
  *
- * getVal(100, $map) - uses an integer
- * getVal(mid, $map) - uses a Sass map
- * getVal($foo, $map) - uses a Sass variable
+ * ko-getVal(100, $map) - uses an integer
+ * ko-getVal(mid, $map) - uses a Sass map
+ * ko-getVal($foo, $map) - uses a Sass variable
  */
 
-@function getValue($val, $map: '') {
+@function ko-getValue($val, $map: '') {
 	@if type-of($val) == 'number' {
 		@return $val;
 	} @else if variable-exists($val) {
@@ -20,14 +20,14 @@
 /**
  * Get breakpoints
  *
- * bp()
+ * ko-bp()
  *
  * Usage:
- * bp(100) - uses an integer
- * bp(mid) - uses the $breakpoints Sass map
- * bp($foo) - uses a Sass variable
+ * ko-bp(100) - uses an integer
+ * ko-bp(mid) - uses the $breakpoints Sass map
+ * ko-bp($foo) - uses a Sass variable
  */
-@function bp($val) {
+@function ko-bp($val) {
 	@return getValue($val, $breakpoints);
 }
 
@@ -35,13 +35,13 @@
 /**
  * Get type size
  *
- * type()
+ * ko-type()
  *
  * Usage:
- * type(100) - uses an integer
- * type(mid) - uses the $type Sass map
- * type($foo) - uses a Sass variable
+ * ko-type(100) - uses an integer
+ * ko-type(mid) - uses the $type Sass map
+ * ko-type($foo) - uses a Sass variable
  */
-@function type($val) {
+@function ko-type($val) {
 	@return getValue($val, $type);
 }

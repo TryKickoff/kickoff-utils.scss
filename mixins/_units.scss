@@ -9,9 +9,9 @@
  */
 
 // REM
-// @include rem(margin, $font-size-base);
-@mixin rem($property, $sizeValue: $font-size-base) {
-	$remValue: (strip-units($sizeValue) / $font-size-base);
+// @include ko-rem(margin, $font-size-base);
+@mixin ko-rem($property, $sizeValue: $font-size-base) {
+	$remValue: (ko-strip-units($sizeValue) / $font-size-base);
 	// #{$property}: ceil($sizeValue) + px;
 	#{$property}: #{$remValue}rem;
 }
@@ -22,25 +22,25 @@
  */
 
 // REM font size
-// @include font-size(16);
-// @include font-size(large);
-// @include font-size($type-jumbo);
-@mixin font-size($sizeValue: $font-size-base) {
+// @include ko-font-size(16);
+// @include ko-font-size(large);
+// @include ko-font-size($type-jumbo);
+@mixin ko-font-size($sizeValue: $font-size-base) {
 	$type: () !default;
 	// @debug $sizeValue;
-	@include rem(font-size, getValue($sizeValue, $type));
+	@include ko-rem(font-size, ko-getValue($sizeValue, $type));
 }
 
 
 // REM line height
-// @include line-height(16);
-@mixin line-height($sizeValue: $line-height-base) {
-	@include rem(line-height, $sizeValue);
+// @include ko-line-height(16);
+@mixin ko-line-height($sizeValue: $line-height-base) {
+	@include ko-rem(line-height, $sizeValue);
 }
 
 
 // EM font size
-// @include font-size-ems(20, 16);
-@mixin font-size-ems($target-px-size, $context-px-size: $font-size-base) {
+// @include ko-font-size-ems(20, 16);
+@mixin ko-font-size-ems($target-px-size, $context-px-size: $font-size-base) {
 	font-size: ($target-px-size / $context-px-size) * 1em;
 }

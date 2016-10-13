@@ -30,15 +30,15 @@ $state-prefix: "is";
 
 
 // Mixins
-// @include block('form') {}
-@mixin block($name) {
+// @include ko-block('form') {}
+@mixin ko-block($name) {
 	.#{$name} {
 		@content;
 	}
 }
 
-// @include element('item') {}
-@mixin element($name) {
+// @include ko-element('item') {}
+@mixin ko-element($name) {
 	@at-root {
 		&#{$element-separator}#{$name} {
 			@content;
@@ -46,8 +46,8 @@ $state-prefix: "is";
 	}
 }
 
-// @include modifier('stacked') {}
-@mixin modifier($name) {
+// @include ko-modifier('stacked') {}
+@mixin ko-modifier($name) {
 	@at-root {
 		&#{$modifier-separator}#{$name} {
 			@content;
@@ -55,9 +55,9 @@ $state-prefix: "is";
 	}
 }
 
-// @include state('active') {}
-// @include state('nav', 'has') {}
-@mixin state($state, $prefix: $state-prefix) {
+// @include ko-state('active') {}
+// @include ko-state('nav', 'has') {}
+@mixin ko-state($state, $prefix: $state-prefix) {
 	@if $combined-state-selectors == true {
 		@at-root {
 			&.#{$prefix}-#{$state} {
@@ -78,30 +78,30 @@ $state-prefix: "is";
 
 
 // Aliases
-// @include component('form') {}
-@mixin component($name) {
-	@include block($name) {
+// @include ko-component('form') {}
+@mixin ko-component($name) {
+	@include ko-block($name) {
 		@content;
 	}
 }
 
-// @include child('item') {}
-@mixin child($name) {
-	@include element($name) {
+// @include ko-child('item') {}
+@mixin ko-child($name) {
+	@include ko-element($name) {
 		@content;
 	}
 }
 
-// @include subcomponent('item') {}
-@mixin subcomponent($name) {
-	@include element($name) {
+// @include ko-subcomponent('item') {}
+@mixin ko-subcomponent($name) {
+	@include ko-element($name) {
 		@content;
 	}
 }
 
-// @include sub('item') {}
-@mixin sub($name) {
-	@include element($name) {
+// @include ko-sub('item') {}
+@mixin ko-sub($name) {
+	@include ko-element($name) {
 		@content;
 	}
 }

@@ -36,8 +36,8 @@ With scss and the [npm-sass](https://www.npmjs.com/package/npm-sass) or similar 
  );
 
  div {
-   font-size: map-deep-get($grid-configuration, 'columns');
-   width: map-deep-get($grid-configuration, 'layouts', 'medium');
+   font-size: ko-map-deep-get($grid-configuration, 'columns');
+   width: ko-map-deep-get($grid-configuration, 'layouts', 'medium');
  }
 ```
 
@@ -46,9 +46,9 @@ With scss and the [npm-sass](https://www.npmjs.com/package/npm-sass) or similar 
 
 ```scss
 // Used in the kickoff $type sass map variable
-modular-scale($font-size-base, -1, $type-scale)
-modular-scale($font-size-base, 0, $type-scale)
-modular-scale($font-size-base, 1, $type-scale)
+ko-modular-scale($font-size-base, -1, $type-scale)
+ko-modular-scale($font-size-base, 0, $type-scale)
+ko-modular-scale($font-size-base, 1, $type-scale)
 ```
 
 ### [_px-to-em.scss](functions/_px-to-em.scss)
@@ -65,10 +65,10 @@ modular-scale($font-size-base, 1, $type-scale)
 
 ```scss
 // Add percentage of white to a color
-background-color: tint(blue, 20%);
+background-color: ko-tint(blue, 20%);
 
 // Add percentage of black to a color
-background-color: shade(blue, 20%);
+background-color: ko-shade(blue, 20%);
 ```
 
 ## Mixins
@@ -77,7 +77,7 @@ background-color: shade(blue, 20%);
 > Hi-dpi media query mixin
 
 ```scss
-@include hidpi {
+@include ko-hidpi {
 	...
 }
 ```
@@ -91,7 +91,7 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 > Position shortcut
 
 ```scss
-@include position(absolute, 10px 20px 30px 10px);
+@include ko-position(absolute, 10px 20px 30px 10px);
 ```
 
 ### [_responsive.scss](mixins/_responsive.scss)
@@ -100,34 +100,34 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 ```scss
 // min-width
 // Equivalent to: @media screen and (min-width: 20em) { ... }
-@include respond-min(mid) { ... }; // uses the $breakpoints sass-map
-@include respond-min(650) { ... }; // converts to px
+@include ko-respond-min(mid) { ... }; // uses the $breakpoints sass-map
+@include ko-respond-min(650) { ... }; // converts to px
 
 // max-width
 // Equivalent to: @media screen and (max-width: 20em) { ... }
-@include respond-min(large) { ... }; // uses the $breakpoints sass-map
-@include respond-min(460) { ... }; // converts to px
+@include ko-respond-min(large) { ... }; // uses the $breakpoints sass-map
+@include ko-respond-min(460) { ... }; // converts to px
 
 // min-max-width
 // Equivalent to: @media screen and (min-width: 10em) and (max-width: 20em) { ... }
-@include respond-min-max(narrow, large) { ... }; // uses the $breakpoints sass-map
-@include respond-min-max(460, 900) { ... }; // converts to px
+@include ko-respond-min-max(narrow, large) { ... }; // uses the $breakpoints sass-map
+@include ko-respond-min-max(460, 900) { ... }; // converts to px
 ```
 
 ### [_units.scss](mixins/_units.scss)
 > Dimension-based mixins
 
-* REM calculation: `@include rem(margin, $font-size-base);`
-* REM font-size: `@include font-size(16);`
-* REM line-height: `@include line-height(22);`
-* EM font-size: `@include font-size-ems(20, 16);`
+* REM calculation: `@include ko-rem(margin, $font-size-base);`
+* REM font-size: `@include ko-font-size(16);`
+* REM line-height: `@include ko-line-height(22);`
+* EM font-size: `@include ko-font-size-ems(20, 16);`
 *
 
 ### [_utility.scss](mixins/_utility.scss)
 > Utility Mixins
 
-* clearfix: `@include clearfix;`
-* Text truncation: `@include truncate(100%);`
+* clearfix: `@include ko-clearfix;`
+* Text truncation: `@include ko-truncate(100%);`
 * and a [bunch more](mixins/utility.scss)
 
 ### [_vertical-centre.scss](mixins/_vertical-centre.scss)

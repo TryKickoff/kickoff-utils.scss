@@ -11,12 +11,12 @@
  );
 
  div {
-   font-size: map-deep-get($grid-configuration, 'columns');
-   width: map-deep-get($grid-configuration, 'layouts', 'medium');
+   font-size: ko-map-deep-get($grid-configuration, 'columns');
+   width: ko-map-deep-get($grid-configuration, 'layouts', 'medium');
  }
  */
 
-@function map-deep-get($map, $keys...) {
+@function ko-map-deep-get($map, $keys...) {
 	@each $key in $keys {
 		$map: map-get($map, $key);
 

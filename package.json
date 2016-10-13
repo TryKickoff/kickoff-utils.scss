@@ -2,7 +2,7 @@
   "name": "kickoff-utils.scss",
   "title": "Kickoff Sass Functions and Mixins",
   "description": "Sass utility functions and mixins for the Kickoff framework",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "homepage": "http://trykickoff.com",
   "repo": "https://github.com/trykickoff/kickoff-utils.scss",
   "main": "index.scss",
@@ -28,8 +28,15 @@
     "node": ">=4.0"
   },
   "keywords": [
-    "⚽"
+    "⚽",
+    "eyeglass-module"
   ],
+  "eyeglass": {
+    "name": "kickoff-utils",
+    "sassDir": "/",
+    "needs": "^1.1.2",
+    "exports": false
+  },
   "scripts": {
     "release-patch": "release-it --non-interactive -p patch",
     "release-minor": "release-it --non-interactive -p minor",

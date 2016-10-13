@@ -2,9 +2,9 @@
  * vertical-center
  * Vertically center any element. Needs support for CSS tranforms.
  * Usage:
- * @include vertical-center;
+ * @include ko-vertical-center;
  */
-@mixin vertical-center {
+@mixin ko-vertical-center {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);

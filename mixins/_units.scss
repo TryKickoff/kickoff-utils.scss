@@ -26,6 +26,7 @@
 // @include font-size(large);
 // @include font-size($type-jumbo);
 @mixin font-size($sizeValue: $font-size-base) {
+	$type: () !default;
 	// @debug $sizeValue;
 	@include rem(font-size, getValue($sizeValue, $type));
 }

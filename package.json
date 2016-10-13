@@ -29,5 +29,13 @@
   },
   "keywords": [
     "⚽"
-  ]
+  ],
+  "scripts": {
+    "release-patch": "release-it --non-interactive -p patch",
+    "release-minor": "release-it --non-interactive -p minor",
+    "release-major": "release-it --non-interactive -p major"
+  },
+  "optionalDependencies": {
+    "release-it": "2.4.0"
+  }
 }

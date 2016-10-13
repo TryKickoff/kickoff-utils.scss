@@ -33,7 +33,7 @@
   ],
   "eyeglass": {
     "name": "kickoff-utils",
-    "sassDir": "/",
+    "sassDir": "scss",
     "needs": "^1.1.2",
     "exports": false
   },

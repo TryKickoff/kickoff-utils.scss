@@ -4,9 +4,9 @@
  * Multiply any value
  *
  * Usage:
- * multiply(15, 2)
- * multiply($baseline, 1.5)
+ * ko-multiply(15, 2)
+ * ko-multiply($baseline, 1.5)
  */
-@function multiply($initial, $multiply) {
+@function ko-multiply($initial, $multiply) {
 	@return $multiply * $initial;
 }

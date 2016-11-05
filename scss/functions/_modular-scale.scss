@@ -1,3 +1,10 @@
+/**
+ * Modular scale
+ * =================================
+ * Usage: ko-modular-scale($font-size-base, 3, $type-scale)
+ * or with the shorthand version: ko-ms(3)
+ */
+
 // Scaling Variables
 $golden           : 1.618;
 $minor-second     : 1.067;
@@ -64,4 +71,15 @@ $double-octave    : 4;
   }
 
   @return $value;
+}
+
+/**
+ * Shorthand modular scale
+ * Uses the $font-size-base and $type-scale framework variables so that you
+ * only need to provide the scale increment
+ *
+ * e.g. ko-ms(5)
+ */
+@function ko-ms($increment) {
+	@return ko-modular-scale($font-size-base, $increment, $type-scale);
 }

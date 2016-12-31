@@ -20,7 +20,7 @@ With scss and the [npm-sass](https://www.npmjs.com/package/npm-sass) or similar 
 
 ## Functions
 ### [_get-value.scss](functions/_get-value.scss)
-> Retrieve value from sass map
+> Retrieve value from sass map. Often used within the `font-size` mixin.
 
 ### [_map-deep-get.scss](functions/_map-deep-get.scss)
 > Retrieve value from deeply nested sass map
@@ -47,12 +47,48 @@ With scss and the [npm-sass](https://www.npmjs.com/package/npm-sass) or similar 
 ```scss
 // Used in the kickoff $type sass map variable
 ko-modular-scale($font-size-base, -1, $type-scale)
-ko-modular-scale($font-size-base, 0, $type-scale)
 ko-modular-scale($font-size-base, 1, $type-scale)
+ko-modular-scale($font-size-base, 3, $type-scale)
+
+
+// or using this shorthand, we assume that `$font-size-base` & `$type-scale` are already set somewhere (in Kickoff, they are set in the _variables.scss file):
+$font-size-base: 20;
+$type-scale: 1.4
+
+ko-ms(-1)
+ko-ms(1)
+ko-ms(3)
+
+// e.g.
+a {
+	font-size: @include font-size(ko-ms(3));
+}
+```
+
+### [_multiply.scss](functions/_multiply.scss)
+> Multiply any value
+
+```scss
+ko-multiply(15, 2)
+ko-multiply($baseline, 1.5)
+
+// e.g.
+a {
+	margin-bottom: ko-multiply($baseline, 1.5);
+}
 ```
 
 ### [_px-to-em.scss](functions/_px-to-em.scss)
 > Convert px em
+
+For a relational value of 12px write ko-em(12) when the parent is 16px
+If the parent is another value say 24px write ko-em(12, 24)
+
+Usage:
+```scss
+font-size : ko-em(12);
+font-size : ko-em(12, 24);
+```
 
 ### [_px-to-rem.scss](functions/_px-to-rem.scss) -
 > Convert px rem
@@ -61,7 +97,7 @@ ko-modular-scale($font-size-base, 1, $type-scale)
 > Strip units
 
 ### [_tint-shade.scss](functions/_tint-shade.scss)
->
+> Add percentage of white or black to a colour
 
 ```scss
 // Add percentage of white to a color
@@ -95,7 +131,7 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 ```
 
 ### [_responsive.scss](mixins/_responsive.scss)
-> Responsive media-queries
+> Responsive media-queries. **We recommend the use of [include-media](http://include-media.com) for media-queries now.**
 
 ```scss
 // min-width

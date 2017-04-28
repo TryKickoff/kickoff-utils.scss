@@ -43,6 +43,6 @@
     "release-major": "release-it --non-interactive -p major"
   },
   "optionalDependencies": {
-    "release-it": "2.4.0"
+    "release-it": "^2.7.1"
   }
 }

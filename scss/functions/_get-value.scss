@@ -45,3 +45,31 @@
 @function ko-type($val) {
 	@return getValue($val, $type);
 }
+
+
+/**
+ * Get font-family
+ *
+ * ko-font()
+ *
+ * Usage:
+ * ko-font(system) - uses 'system' font stack
+ * ko-font(sans) - uses the 'sans' font stack
+ */
+@function ko-font($val) {
+	@return getValue($val, $font-family);
+}
+
+
+/**
+ * Get z-index value
+ *
+ * ko-zIndex()
+ *
+ * Usage:
+ * ko-zIndex(low) - uses 'low' z-index value
+ * ko-zIndex(mid) - uses 'mid' z-index value
+ */
+@function ko-font($val) {
+	@return getValue($val, $z-index);
+}

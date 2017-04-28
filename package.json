@@ -2,7 +2,7 @@
   "name": "kickoff-utils.scss",
   "title": "Kickoff Sass Functions and Mixins",
   "description": "Sass utility functions and mixins for the Kickoff framework",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "homepage": "http://trykickoff.com",
   "repo": "https://github.com/trykickoff/kickoff-utils.scss",
   "main": "index.scss",

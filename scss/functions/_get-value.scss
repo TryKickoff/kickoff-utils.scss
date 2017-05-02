@@ -1,9 +1,9 @@
 /**
  * Usage:
  *
- * ko-getVal(100, $map) - uses an integer
- * ko-getVal(mid, $map) - uses a Sass map
- * ko-getVal($foo, $map) - uses a Sass variable
+ * ko-getValue(100, $map) - uses an integer
+ * ko-getValue(mid, $map) - uses a Sass map
+ * ko-getValue($foo, $map) - uses a Sass variable
  */
 
 @function ko-getValue($val, $map: '') {
@@ -28,7 +28,7 @@
  * ko-bp($foo) - uses a Sass variable
  */
 @function ko-bp($val) {
-	@return getValue($val, $breakpoints);
+	@return ko-getValue($val, $breakpoints);
 }
 
 
@@ -43,7 +43,7 @@
  * ko-type($foo) - uses a Sass variable
  */
 @function ko-type($val) {
-	@return getValue($val, $type);
+	@return ko-getValue($val, $type);
 }
 
 
@@ -57,7 +57,7 @@
  * ko-font(sans) - uses the 'sans' font stack
  */
 @function ko-font($val) {
-	@return getValue($val, $font-family);
+	@return ko-getValue($val, $font-family);
 }
 
 
@@ -71,5 +71,5 @@
  * ko-zIndex(mid) - uses 'mid' z-index value
  */
 @function ko-font($val) {
-	@return getValue($val, $z-index);
+	@return ko-getValue($val, $z-index);
 }

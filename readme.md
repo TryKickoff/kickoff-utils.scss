@@ -1,9 +1,7 @@
 # @kickoff/utils.scss
 > Sass Functions and Mixins for the Kickoff framework
 
-[![npm version](https://badge.fury.io/js/@kickoff/utils.scss.svg)](https://badge.fury.io/js/kickoff-utils.scss)
-
-[![NPM](https://nodei.co/npm/@kickoff/utils.scss.png)](https://nodei.co/npm/@kickoff/utils.scss/)
+[![npm version](https://img.shields.io/npm/v/@kickoff/utils.scss.svg?style=flat-square)](https://www.npmjs.com/package/@kickoff/utils.scss)
 
 ## Install
 

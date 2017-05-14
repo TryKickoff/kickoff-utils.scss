@@ -1,0 +1,23 @@
+/**
+ * Responsive reveal
+ * =================================
+ * Responsive helper classes to show/hide content based on our media-queries
+ *
+ * Usage: @include ko-rwd-reveal();
+ */
+
+@mixin ko-rwd-reveal($map: $breakpoints) {
+	@each $key, $value in $map {
+		.u-showBelow--#{$key} {
+			@include media('>=#{$key}') {
+				display: none;
+			}
+		}
+
+		.u-showAbove--#{$key} {
+			@include media('<=#{$key}') {
+				display: none;
+			}
+		}
+	}
+}

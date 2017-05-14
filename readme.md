@@ -131,7 +131,14 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 @include ko-position(absolute, 10px 20px 30px 10px);
 ```
 
-### [_responsive.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/mixins/_responsive.scss)
+### [_responsive-reveal.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/mixins/_responsive-reveal.scss)
+> Responsive helper classes to show/hide content based on our `$breakpoints` map
+
+```scss
+@include ko-rwd-reveal();
+```
+
+### [_responsive.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/mixins/_responsive.scss)
 > Responsive media-queries. **We recommend the use of [include-media](http://include-media.com) for media-queries now.**
 
 ```scss

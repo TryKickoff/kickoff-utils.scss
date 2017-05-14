@@ -144,17 +144,6 @@ font-size : ko-em(12, 24);
 ### [_strip-units.scss](/scss/functions/_strip-units.scss)
 > Strip units
 
-### [_tint-shade.scss](/scss/functions/_tint-shade.scss)
-> Add percentage of white or black to a colour
-
-```scss
-// Add percentage of white to a color
-background-color: ko-tint(blue, 20%);
-
-// Add percentage of black to a color
-background-color: ko-shade(blue, 20%);
-```
-
 ## Mixins
 
 ### [_hidpi.scss](/scss/mixins/_hidpi.scss)
@@ -186,7 +175,9 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 ```
 
 ### [_responsive.scss](/scss/mixins/_responsive.scss)
-> Responsive media-queries. **We recommend the use of [include-media](http://include-media.com) for media-queries now.**
+> Responsive media-queries.
+
+**This is deprecated, we recommend the use of [include-media](http://include-media.com) for media-queries now.**
 
 ```scss
 // min-width

@@ -20,10 +20,57 @@ With scss and the [npm-sass](https://www.npmjs.com/package/npm-sass) or similar 
 ```
 
 ## Functions
-### [_get-value.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/functions/_get-value.scss)
+
+### [_colors.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/functions/_colors.scss)
+> Various color functions
+
+```scss
+// With a color palette map like this:
+$color-palette: (
+  white: (
+    base: #ffffff
+  ),
+
+  sky: (
+    lighter: #f9fafb,
+    light: #f4f6f8,
+    base: #dfe3e8,
+    dark: #c4cdd5
+  )
+);
+
+// ko-color() function
+a {
+  color: ko-color(white); // picks the `base` value
+  color: ko-color(sky, dark); // picks the `dark` variant
+  color: ko-color(sky, lighter); // picks the `lighter` variant
+}
+
+// ko-color-tint() function
+// Add percentage of white to a color
+a {
+  background-color: ko-color-tint(blue, 20%);
+}
+
+// ko-color-shade() function
+// Add percentage of black to a color
+a {
+  background-color: ko-color-tint(red, 10%);
+}
+```
+
+### [_get-value.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/functions/_get-value.scss)
 > Retrieve value from sass map. Often used within the `font-size` mixin. There are a number of utility functions that make use of this function, see the [source file](functions/_get-value.scss)
 
-### [_map-deep-get.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/functions/_map-deep-get.scss)
+```scss
+// map helper
+ko-getValue(mid, $map) // uses a Sass map
+
+// breakpoints helper
+ko-bp(mid) // uses the $breakpoints Sass map
+```
+
+### [_map-deep-get.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/functions/_map-deep-get.scss)
 > Retrieve value from deeply nested sass map
 
 ```scss
@@ -42,7 +89,7 @@ With scss and the [npm-sass](https://www.npmjs.com/package/npm-sass) or similar 
  }
 ```
 
-### [_modular-scale.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/functions/_modular-scale.scss)
+### [_modular-scale.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/functions/_modular-scale.scss)
 > Sizes type using a consistent vertical rythm
 
 ```scss
@@ -66,7 +113,7 @@ a {
 }
 ```
 
-### [_multiply.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/functions/_multiply.scss)
+### [_multiply.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/functions/_multiply.scss)
 > Multiply any value
 
 ```scss
@@ -79,7 +126,7 @@ a {
 }
 ```
 
-### [_px-to-em.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/functions/_px-to-em.scss)
+### [_px-to-em.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/functions/_px-to-em.scss)
 > Convert px em
 
 For a relational value of 12px write ko-em(12) when the parent is 16px
@@ -91,13 +138,13 @@ font-size : ko-em(12);
 font-size : ko-em(12, 24);
 ```
 
-### [_px-to-rem.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/functions/_px-to-rem.scss) -
+### [_px-to-rem.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/functions/_px-to-rem.scss) -
 > Convert px rem
 
-### [_strip-units.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/functions/_strip-units.scss)
+### [_strip-units.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/functions/_strip-units.scss)
 > Strip units
 
-### [_tint-shade.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/functions/_tint-shade.scss)
+### [_tint-shade.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/functions/_tint-shade.scss)
 > Add percentage of white or black to a colour
 
 ```scss
@@ -110,7 +157,7 @@ background-color: ko-shade(blue, 20%);
 
 ## Mixins
 
-### [_hidpi.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/mixins/_hidpi.scss)
+### [_hidpi.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/mixins/_hidpi.scss)
 > Hi-dpi media query mixin
 
 ```scss
@@ -119,12 +166,12 @@ background-color: ko-shade(blue, 20%);
 }
 ```
 
-### [_module-naming-helpers.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/mixins/_module-naming-helpers.scss)
+### [_module-naming-helpers.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/mixins/_module-naming-helpers.scss)
 > Provides consistent class naming through the usage of mixins
 
 See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 
-### [_position.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/mixins/_position.scss)
+### [_position.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/mixins/_position.scss)
 > Position shortcut
 
 ```scss
@@ -158,7 +205,7 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 @include ko-respond-min-max(460, 900) { ... }; // converts to px
 ```
 
-### [_units.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/mixins/_units.scss)
+### [_units.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/mixins/_units.scss)
 > Dimension-based mixins
 
 * REM calculation: `@include ko-rem(margin, $font-size-base);`
@@ -166,14 +213,14 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 * REM line-height: `@include ko-line-height(22);`
 * EM font-size: `@include ko-font-size-ems(20, 16);`
 
-### [_utility.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/mixins/_utility.scss)
+### [_utility.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/mixins/_utility.scss)
 > Utility Mixins
 
 * clearfix: `@include ko-clearfix;`
 * Text truncation: `@include ko-truncate(100%);`
-* and a [bunch more](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/mixins/utility.scss)
+* and a [bunch more](/TryKickoff/kickoff-utils.scss/blob/master/scss/mixins/utility.scss)
 
-### [_vertical-centre.scss](https://github.com/TryKickoff/kickoff-utils.scss/blob/master/mixins/_vertical-centre.scss)
+### [_vertical-centre.scss](/TryKickoff/kickoff-utils.scss/blob/master/scss/mixins/_vertical-centre.scss)
 > Vertically center any element. Needs support for CSS tranforms.
 
 ```scss

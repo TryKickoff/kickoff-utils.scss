@@ -70,6 +70,6 @@
  * ko-zIndex(low) - uses 'low' z-index value
  * ko-zIndex(mid) - uses 'mid' z-index value
  */
-@function ko-font($val) {
+@function ko-zIndex($val) {
 	@return ko-getValue($val, $z-index);
 }

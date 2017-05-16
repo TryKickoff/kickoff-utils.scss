@@ -1,0 +1,23 @@
+/**
+ * REM converter
+ * =================================
+ * Converts px values, $type scale and more, to REM
+
+ * Usage:
+ * font-size : ko-rem(12); // Use a unitless pixel value
+ * font-size : ko-rem(12, 24); // Sets a new base font size
+ * font-size : ko-rem(xl); // Uses the `xl` value from the `$type` map
+ * font-size : ko-rem(ko-ms(2)); // Uses the modular-scale function
+ *
+ * Errors:
+ * Errors will occur if units are used, e.g. ko-rem(12px)
+ */
+
+@function ko-rem($val, $base: $font-size-base) {
+	@if type-of($val) == 'number' or variable-exists($val) {
+		@return ($val / $base) * 1rem;
+	} @else {
+		@return #{map-get($type, $val) / $base}rem;
+	}
+}
+

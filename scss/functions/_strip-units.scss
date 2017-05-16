@@ -1,7 +1,12 @@
-/// Remove the unit of a length
-/// @param {Number} $number - Number to remove unit from
-/// @return {Number} - Unitless number
-/// @example ko-strip-units(400px)
+/**
+ * Strip units
+ * =================================
+ * Remove the unit of a measurement
+ *
+ * Usage:
+ * ko-strip-units(400px)  > 400
+ */
+
 @function ko-strip-units($val) {
 	$newVal: 0;
 	@if $val == null {

@@ -1,4 +1,6 @@
 /**
+ * Get Value
+ * =================================
  * Usage:
  *
  * ko-getValue(100, $map) - uses an integer
@@ -19,6 +21,7 @@
 
 /**
  * Get breakpoints
+ * extends getValue()
  *
  * ko-bp()
  *
@@ -34,6 +37,7 @@
 
 /**
  * Get type size
+ * extends getValue()
  *
  * ko-type()
  *
@@ -49,6 +53,7 @@
 
 /**
  * Get font-family
+ * extends getValue()
  *
  * ko-font()
  *
@@ -63,6 +68,7 @@
 
 /**
  * Get z-index value
+ * extends getValue()
  *
  * ko-zIndex()
  *

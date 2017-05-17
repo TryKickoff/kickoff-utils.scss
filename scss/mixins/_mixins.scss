@@ -21,8 +21,9 @@
 @import "position";
 @import "vertical-center";
 
-// Utility mixins - Clearfix and other helpers
-@import "utility";
+// Utility mixins
+@import "utility"; // Clearfix and other helpers
+@import "type-sizes";
 
 // Module naming helpers
 @import "module-naming-helpers";

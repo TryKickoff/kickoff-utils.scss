@@ -1,0 +1,23 @@
+/**
+ * Type size helpers
+ * =================================
+ * Type size helper classes
+ *
+ * Demo: https://www.sassmeister.com/gist/cc602c38dc2e46c8b05e38e5891dfa4d)
+ * Usage examples:
+ * @include ko-type-sizes(); // outputs just the type-size helpers based on the $type map
+ * @include ko-type-sizes($type, (h1: xxl, h2: xl)); // would also output the .h1, .h2 classes
+ * @include ko-type-sizes($type, (alpha: xxl, beta: xl)); // would also output the .alpha, .beta classes
+ */
+
+@mixin ko-type-sizes($map: $type, $custom: '') {
+	@each $key, $value in $map {
+		.u-typeSize--#{$key} { font-size: ko-rem($key) };
+	}
+
+	@if $custom != '' {
+		@each $key, $value in $custom {
+			.#{$key} { font-size: ko-rem($value) };
+		}
+	}
+}

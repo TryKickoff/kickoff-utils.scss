@@ -172,6 +172,24 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 @include ko-rwd-reveal();
 ```
 
+### [_type-sizes.scss](/scss/mixins/_type-sizes.scss)
+> Type size helper classes. [See demo](
+https://www.sassmeister.com/gist/cc602c38dc2e46c8b05e38e5891dfa4d)
+
+```scss
+// outputs just the type-size helpers based on the $type map
+// e.g. .u-typeSize--m / .u-typeSize-l
+@include ko-type-sizes();
+
+// Using another $map as the 2nd argument would output the above
+// as well as the .h1, .h2 values defined in the 2nd $map
+@include ko-type-sizes($type, (h1: xxl, h2: xl));
+
+// Using another $map as the 2nd argument would output the above
+// as well as the .alpha, .beta values defined in the 2nd $map
+@include ko-type-sizes($type, (alpha: xxl, beta: xl));
+```
+
 ### [_responsive.scss](/scss/mixins/_responsive.scss)
 > Responsive media-queries.
 

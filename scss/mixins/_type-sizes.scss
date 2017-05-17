@@ -12,12 +12,12 @@
 
 @mixin ko-type-sizes($map: $type, $custom: '') {
 	@each $key, $value in $map {
-		.u-typeSize--#{$key} { font-size: ko-rem($key) };
+		.u-type-#{$key} { font-size: ko-rem($key); }
 	}
 
 	@if $custom != '' {
 		@each $key, $value in $custom {
-			.#{$key} { font-size: ko-rem($value) };
+			.#{$key} { font-size: ko-rem($value); }
 		}
 	}
 }

@@ -166,15 +166,14 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 ```
 
 ### [_responsive-reveal.scss](/scss/mixins/_responsive-reveal.scss)
-> Responsive helper classes to show/hide content based on our `$breakpoints` map. [See demo](https://www.sassmeister.com/gist/de0fe4e186478fd7defb6cf896665d79)
+> Responsive helper classes to show/hide content based on our [`$breakpoints`](https://github.com/TryKickoff/kickoff/blob/master/assets/src/scss/_variables.scss#L66) map. [See demo](https://www.sassmeister.com/gist/de0fe4e186478fd7defb6cf896665d79)
 
 ```scss
 @include ko-rwd-reveal();
 ```
 
 ### [_type-sizes.scss](/scss/mixins/_type-sizes.scss)
-> Type size helper classes. [See demo](
-https://www.sassmeister.com/gist/cc602c38dc2e46c8b05e38e5891dfa4d)
+> Type size helper classes based on our [`$type`](https://github.com/TryKickoff/kickoff/blob/master/assets/src/scss/_variables.scss#L32) map. [See demo](https://www.sassmeister.com/gist/4538efbd08b93e5e3478e329f0076321)
 
 ```scss
 // outputs just the type-size helpers based on the $type map

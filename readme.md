@@ -166,7 +166,7 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 ```
 
 ### [_responsive-reveal.scss](/scss/mixins/_responsive-reveal.scss)
-> Responsive helper classes to show/hide content based on our `$breakpoints` map
+> Responsive helper classes to show/hide content based on our `$breakpoints` map. [See demo](https://www.sassmeister.com/gist/de0fe4e186478fd7defb6cf896665d79)
 
 ```scss
 @include ko-rwd-reveal();

@@ -92,9 +92,9 @@ ko-bp(mid) // uses the $breakpoints Sass map
 
 ```scss
 // Used in the kickoff $type sass map variable
-ko-modular-scale($font-size-base, -1, $type-scale)
-ko-modular-scale($font-size-base, 1, $type-scale)
-ko-modular-scale($font-size-base, 3, $type-scale)
+ko-modular-scale(map-get($font-size, base), -1, $type-scale)
+ko-modular-scale(map-get($font-size, base), 1, $type-scale)
+ko-modular-scale(map-get($font-size, base), 3, $type-scale)
 
 
 // or using this shorthand, we assume that `$font-size-base` & `$type-scale` are already set somewhere (in Kickoff, they are set in the _variables.scss file):
@@ -212,12 +212,12 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 ```
 
 ### [_units.scss](/scss/mixins/_units.scss)
-> Dimension-based mixins
+> Dimension-based calculation mixins
 
-* REM calculation: `@include ko-rem(margin, $font-size-base);`
-* REM font-size: `@include ko-font-size(16);`
-* REM line-height: `@include ko-line-height(22);`
-* EM font-size: `@include ko-font-size-ems(20, 16);`
+* REM calculation: `@include ko-rem(margin-right, 50);` - 50px margin-right in REM
+* REM font-size: `@include ko-font-size(16);` - 16px font-size in REM
+* REM line-height: `@include ko-line-height(22);` - 22px line-height in REM
+* EM font-size: `@include ko-font-size-ems(20, 16);` - 20px font-size in EM
 
 ### [_utility.scss](/scss/mixins/_utility.scss)
 > Utility Mixins

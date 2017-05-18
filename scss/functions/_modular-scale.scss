@@ -4,7 +4,7 @@
  * Sizes type etc using a consistent vertical rythm
  *
  * Usage:
- * ko-modular-scale($font-size-base, 3, $type-scale)
+ * ko-modular-scale(20, 3, $type-scale)
  * or with the shorthand version:
  * ko-ms(3)
  */
@@ -79,11 +79,15 @@ $double-octave    : 4;
 
 /**
  * Shorthand modular scale
- * Uses the $font-size-base and $type-scale framework variables so that you
+ * Uses the $font-size map's `base` value and $type-scale framework variables so that you
  * only need to provide the scale increment
  *
  * e.g. ko-ms(5)
  */
 @function ko-ms($increment) {
-	@return ko-modular-scale($font-size-base, $increment, $type-scale);
+	@return ko-modular-scale(
+    map-get($font-size, base),
+    $increment,
+    $type-scale
+  );
 }

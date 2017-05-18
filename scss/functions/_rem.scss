@@ -13,7 +13,7 @@
  * Errors will occur if units are used, e.g. ko-rem(12px)
  */
 
-@function ko-rem($val, $base: $font-size-base) {
+@function ko-rem($val, $base: map-get($font-size, base)) {
 	@if type-of($val) == 'number' or variable-exists($val) {
 		@return ($val / $base) * 1rem;
 	} @else {

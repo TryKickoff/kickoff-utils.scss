@@ -4,9 +4,13 @@
  * Multiply any integer value
  *
  * Usage:
- * ko-multiply(15, 2)
- * ko-multiply($baseline, 1.5)
+ * ko-multiply(2, 15)
+ * ko-multiply(1.5, $baseline)
+ * ko-multiply(1.5) // uses $baseline as a default
  */
-@function ko-multiply($initial, $multiply) {
-	@return $multiply * $initial;
+@function ko-multiply($multiply, $initial: $baseline) {
+	@if type-of($multiply) != "number" {
+		@debug "ko-multiply needs the first argument to be a number";
+	}
+	@return $initial * $multiply;
 }

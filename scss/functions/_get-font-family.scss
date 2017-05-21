@@ -1,0 +1,14 @@
+/**
+ * Get font-family
+ * =================================
+ * Get font-family from $font-family map
+ *
+ * ko-font()
+ *
+ * Usage:
+ * ko-font(system) - uses 'system' font stack
+ * ko-font(sans) - uses the 'sans' font stack
+ */
+@function ko-font($val, $map: $font-family) {
+	@return ko-getValue($val, $map);
+}

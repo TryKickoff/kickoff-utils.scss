@@ -1,0 +1,13 @@
+/**
+ * Get breakpoint
+ * =================================
+ * Get breakpoint from $breakpoints map
+ *
+ * ko-bp()
+ *
+ * Usage:
+ * ko-bp(m) - uses the $breakpoints Sass map
+ */
+@function ko-bp($val) {
+	@return ko-getValue($val, $breakpoints);
+}

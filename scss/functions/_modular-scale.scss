@@ -30,6 +30,7 @@ $double-octave    : 4;
 
 
 @function ko-modular-scale($value, $increment, $ratio) {
+  @warn "this function is deprecated. Please use new modular scale function."
   $v1: nth($value, 1);
   $v2: nth($value, length($value));
   $value: $v1;
@@ -85,5 +86,6 @@ $double-octave    : 4;
  * e.g. ko-ms(5)
  */
 @function ko-ms($increment) {
+  @warn "this function is deprecated. Please use new modular scale function."
 	@return ko-modular-scale($font-size-base, $increment, $type-scale);
 }

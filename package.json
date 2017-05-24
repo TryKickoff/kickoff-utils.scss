@@ -37,12 +37,8 @@
     "needs": "^1.1.2",
     "exports": false
   },
-  "scripts": {
-    "release-patch": "release-it --non-interactive -p patch",
-    "release-minor": "release-it --non-interactive -p minor",
-    "release-major": "release-it --non-interactive -p major"
-  },
-  "optionalDependencies": {
-    "release-it": "^2.7.1"
+  "scripts": {},
+  "dependencies": {
+    "modularscale-sass": "^3.0.2"
   }
 }

@@ -12,12 +12,17 @@
 
 @mixin ko-type-sizes($map: $type, $custom: '') {
 	@each $key, $value in $map {
-		.u-type-#{$key} { font-size: ko-rem($key); }
+		.u-type-#{$key} { font-size: ko-font-size($key); }
 	}
 
 	@if $custom != '' {
-		@each $key, $value in $custom {
-			.#{$key} { font-size: ko-rem($value); }
+		@each $k, $val in $custom {
+			// @if unit($val) == px or unit($val) == em or unit($val) == rem { // FIXME: why does this not work?
+			@if type-of($val) == number {
+				.#{$k} { font-size: $val; }
+			} @else {
+				.#{$k} { font-size: ko-font-size($val); }
+			}
 		}
 	}
 }

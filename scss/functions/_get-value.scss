@@ -3,79 +3,13 @@
  * =================================
  * Usage:
  *
- * ko-getValue(100, $map) - uses an integer
- * ko-getValue(mid, $map) - uses a Sass map
- * ko-getValue($foo, $map) - uses a Sass variable
+ * ko-getValue(mid, $map) - specify a key from a Sass map
  */
 
 @function ko-getValue($val, $map: '') {
-	@if type-of($val) == 'number' {
-		@return $val;
-	} @else if variable-exists($val) {
-		@return $val;
-	} @else {
-		@return map-get($map, $val);
+	@if not map-has-key($map, $val) {
+		@warn "No value found in `$type` map for `#{$val}`. Property omitted.";
 	}
-}
 
-
-/**
- * Get breakpoints
- * extends getValue()
- *
- * ko-bp()
- *
- * Usage:
- * ko-bp(100) - uses an integer
- * ko-bp(mid) - uses the $breakpoints Sass map
- * ko-bp($foo) - uses a Sass variable
- */
-@function ko-bp($val) {
-	@return ko-getValue($val, $breakpoints);
-}
-
-
-/**
- * Get type size
- * extends getValue()
- *
- * ko-type()
- *
- * Usage:
- * ko-type(100) - uses an integer
- * ko-type(mid) - uses the $type Sass map
- * ko-type($foo) - uses a Sass variable
- */
-@function ko-type($val) {
-	@return ko-getValue($val, $type);
-}
-
-
-/**
- * Get font-family
- * extends getValue()
- *
- * ko-font()
- *
- * Usage:
- * ko-font(system) - uses 'system' font stack
- * ko-font(sans) - uses the 'sans' font stack
- */
-@function ko-font($val) {
-	@return ko-getValue($val, $font-family);
-}
-
-
-/**
- * Get z-index value
- * extends getValue()
- *
- * ko-zIndex()
- *
- * Usage:
- * ko-zIndex(low) - uses 'low' z-index value
- * ko-zIndex(mid) - uses 'mid' z-index value
- */
-@function ko-zIndex($val) {
-	@return ko-getValue($val, $z-index);
+	@return map-get($map, $val);
 }

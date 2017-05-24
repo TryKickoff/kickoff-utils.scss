@@ -1,11 +1,5 @@
 /**
  * Sass Mixins
- * - Responsive
- * - Dimensions
- * - Positioning
- * - Utility
- * - Forms
- * - Module Naming Helpers
  */
 
 // Responsive mixins
@@ -13,15 +7,11 @@
 @import "responsive";
 @import "hidpi";
 
-// Sizing mixins
-// Font-sizing, REM mixins and other sizing mixins
-@import "units";
-
 // Positioning mixins
 @import "position";
 @import "vertical-center";
 
-// Utility mixins
+// Utilities
 @import "utility"; // Clearfix and other helpers
 @import "type-sizes";
 

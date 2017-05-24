@@ -1,8 +1,13 @@
-@import "colors";
-@import "get-value";
+/**
+ * Sass Functions
+ */
 @import "map-deep-get";
-@import "modular-scale";
-@import "px-to-em";
-@import "rem";
+@import "get-value";
+@import "colors";
+@import "get-breakpoint";
+@import "get-font-family";
+@import "get-font-size";
+@import "get-z-index";
 @import "strip-units";
 @import "multiply";
+@import "px-to-em";

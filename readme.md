@@ -58,14 +58,42 @@ a {
 ```
 
 ### [_get-value.scss](/scss/functions/_get-value.scss)
-> Retrieve value from sass map. Often used within the `font-size` mixin. There are a number of utility functions that make use of this function, see the [source file](functions/_get-value.scss)
+> Retrieve value from sass map. Often used within the `font-size` mixin.
 
 ```scss
 // map helper
 ko-getValue(mid, $map) // uses a Sass map
+```
 
-// breakpoints helper
-ko-bp(mid) // uses the $breakpoints Sass map
+### [_get-breakpoint.scss](/scss/functions/_get-breakpoint.scss)
+> Get breakpoint from $breakpoints map
+
+```scss
+ko-bp(m) // uses the $breakpoints Sass map
+```
+
+### [_get-font-family.scss](/scss/functions/_get-font-family.scss)
+> Get font-family from $font-family map
+
+```scss
+ko-font(system) // uses 'system' font stack
+ko-font(sans) // uses the 'sans' font stack
+```
+
+### [_get-font-size.scss](/scss/functions/_get-font-size.scss)
+> Get font-size from $type map
+
+```scss
+ko-font-size(xl) // Kickoff uses t-shirt sizes
+ko-font-size(large, $font-sizes) // Using a made-up $font-sizes map
+```
+
+### [_get-z-index.scss](/scss/functions/_get-z-index.scss)
+> Get z-index value from $z-index map
+
+```scss
+ko-zIndex(low) // uses 'low' z-index value
+ko-zIndex(mid) // uses 'mid' z-index value
 ```
 
 ### [_map-deep-get.scss](/scss/functions/_map-deep-get.scss)
@@ -85,30 +113,6 @@ ko-bp(mid) // uses the $breakpoints Sass map
    font-size: ko-map-deep-get($grid-configuration, 'columns');
    width: ko-map-deep-get($grid-configuration, 'layouts', 'medium');
  }
-```
-
-### [_modular-scale.scss](/scss/functions/_modular-scale.scss)
-> Sizes type using a consistent vertical rythm
-
-```scss
-// Used in the kickoff $type sass map variable
-ko-modular-scale($font-size-base, -1, $type-scale)
-ko-modular-scale($font-size-base, 1, $type-scale)
-ko-modular-scale($font-size-base, 3, $type-scale)
-
-
-// or using this shorthand, we assume that `$font-size-base` & `$type-scale` are already set somewhere (in Kickoff, they are set in the _variables.scss file):
-$font-size-base: 20;
-$type-scale: 1.4
-
-ko-ms(-1)
-ko-ms(1)
-ko-ms(3)
-
-// e.g.
-a {
-	font-size: @include font-size(ko-ms(3));
-}
 ```
 
 ### [_multiply.scss](/scss/functions/_multiply.scss)
@@ -136,13 +140,50 @@ font-size : ko-em(12);
 font-size : ko-em(12, 24);
 ```
 
-### [_px-to-rem.scss](/scss/functions/_px-to-rem.scss) -
-> Convert px rem
-
 ### [_strip-units.scss](/scss/functions/_strip-units.scss)
 > Strip units
 
+---
+
 ## Mixins
+
+### [_type-sizes.scss](/scss/mixins/_type-sizes.scss)
+> Type size helper classes based on our [`$type`](https://github.com/TryKickoff/kickoff/blob/master/assets/src/scss/_variables.scss#L32) map. [See demo](https://www.sassmeister.com/gist/4538efbd08b93e5e3478e329f0076321)
+
+```scss
+// outputs type-size helpers based on the $type map
+// e.g. .u-typeSize--m / .u-typeSize-l
+@include ko-type-sizes();
+
+// Using another $map as the 2nd argument would output the above
+// as well as the .h1, .h2 values defined in the 2nd $map
+@include ko-type-sizes($type, (h1: xxl, h2: xl));
+
+// Using another $map as the 2nd argument would output the above
+// as well as the .alpha, .beta values defined in the 2nd $map
+@include ko-type-sizes($type, (alpha: xxl, beta: xl));
+```
+
+### [_responsive-reveal.scss](/scss/mixins/_responsive-reveal.scss)
+> Responsive helper classes to show/hide content based on our [`$breakpoints`](https://github.com/TryKickoff/kickoff/blob/master/assets/src/scss/_variables.scss#L66) map. [See demo](https://www.sassmeister.com/gist/de0fe4e186478fd7defb6cf896665d79)
+
+```scss
+@include ko-rwd-reveal();
+```
+
+### [_utility.scss](/scss/mixins/_utility.scss)
+> Utility Mixins
+
+* clearfix: `@include ko-clearfix;`
+* Text truncation: `@include ko-truncate(100%);`
+* and a [bunch more](/scss/mixins/utility.scss)
+
+### [_vertical-centre.scss](/scss/mixins/_vertical-centre.scss)
+> Vertically center any element. Needs support for CSS tranforms.
+
+```scss
+@include vertical-center;
+```
 
 ### [_hidpi.scss](/scss/mixins/_hidpi.scss)
 > Hi-dpi media query mixin
@@ -165,34 +206,10 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 @include ko-position(absolute, 10px 20px 30px 10px);
 ```
 
-### [_responsive-reveal.scss](/scss/mixins/_responsive-reveal.scss)
-> Responsive helper classes to show/hide content based on our [`$breakpoints`](https://github.com/TryKickoff/kickoff/blob/master/assets/src/scss/_variables.scss#L66) map. [See demo](https://www.sassmeister.com/gist/de0fe4e186478fd7defb6cf896665d79)
-
-```scss
-@include ko-rwd-reveal();
-```
-
-### [_type-sizes.scss](/scss/mixins/_type-sizes.scss)
-> Type size helper classes based on our [`$type`](https://github.com/TryKickoff/kickoff/blob/master/assets/src/scss/_variables.scss#L32) map. [See demo](https://www.sassmeister.com/gist/4538efbd08b93e5e3478e329f0076321)
-
-```scss
-// outputs just the type-size helpers based on the $type map
-// e.g. .u-typeSize--m / .u-typeSize-l
-@include ko-type-sizes();
-
-// Using another $map as the 2nd argument would output the above
-// as well as the .h1, .h2 values defined in the 2nd $map
-@include ko-type-sizes($type, (h1: xxl, h2: xl));
-
-// Using another $map as the 2nd argument would output the above
-// as well as the .alpha, .beta values defined in the 2nd $map
-@include ko-type-sizes($type, (alpha: xxl, beta: xl));
-```
-
 ### [_responsive.scss](/scss/mixins/_responsive.scss)
 > Responsive media-queries.
 
-**This is deprecated, we recommend the use of [include-media](http://include-media.com) for media-queries now.**
+**🚨  This is deprecated, we recommend the use of [include-media](http://include-media.com) for media-queries now.**
 
 ```scss
 // min-width
@@ -211,24 +228,7 @@ See https://gist.github.com/mrmartineau/0cd2010bf265d712bafb for usage
 @include ko-respond-min-max(460, 900) { ... }; // converts to px
 ```
 
-### [_units.scss](/scss/mixins/_units.scss)
+### _units.scss
 > Dimension-based mixins
 
-* REM calculation: `@include ko-rem(margin, $font-size-base);`
-* REM font-size: `@include ko-font-size(16);`
-* REM line-height: `@include ko-line-height(22);`
-* EM font-size: `@include ko-font-size-ems(20, 16);`
-
-### [_utility.scss](/scss/mixins/_utility.scss)
-> Utility Mixins
-
-* clearfix: `@include ko-clearfix;`
-* Text truncation: `@include ko-truncate(100%);`
-* and a [bunch more](/scss/mixins/utility.scss)
-
-### [_vertical-centre.scss](/scss/mixins/_vertical-centre.scss)
-> Vertically center any element. Needs support for CSS tranforms.
-
-```scss
-@include vertical-center;
-```
+**🚨 These mixins have been removed. They are not needed because we now use a PostCSS plugin ([postcss-pxtorem](https://github.com/cuth/postcss-pxtorem)) that converts px values to rem at the build stage**

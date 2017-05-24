@@ -1,0 +1,16 @@
+/**
+ * Get font-size
+ * =================================
+ * Get font-size from $type map
+ *
+ * ko-font-size()
+ *
+ * Usage:
+ * ko-font-size(xl) // Kickoff uses t-shirt sizes
+ * ko-font-size(large, $font-sizes) // Using a made-up $font-sizes map
+ */
+@function ko-font-size($val: base, $map: $type) {
+	@return ko-getValue($val, $type);
+}
+
+

@@ -1,0 +1,14 @@
+/**
+ * Get z-index value
+ * =================================
+ * Get z-index value from $z-index map
+ *
+ * ko-bp()
+ *
+ * Usage:
+ * ko-zIndex(low) - uses 'low' z-index value
+ * ko-zIndex(mid) - uses 'mid' z-index value
+ */
+@function ko-zIndex($val, $map: $z-index) {
+	@return ko-getValue($val, $map);
+}

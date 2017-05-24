@@ -26,6 +26,7 @@ $mq-base: 16;
  * - Usage: @include ko-respond-min(mid) { ... };
  */
 @mixin ko-respond-min($width) {
+	@warn "This mixin will be deprecated soon, please use the include-media plugin for defining your media queries";
 	$width-em: ko-em(ko-strip-units(ko-bp($width)), $mq-base);
 
 	@media screen and (min-width: $width-em) {
@@ -40,6 +41,7 @@ $mq-base: 16;
  * - Usage: @include ko-respond-max(mid) { ... };
  */
 @mixin ko-respond-max($width) {
+	@warn "This mixin will be deprecated soon, please use the include-media plugin for defining your media queries";
 	$width-em: ko-em(ko-strip-units(ko-bp($width)), $mq-base);
 
 	@media screen and (max-width: $width-em) {
@@ -54,6 +56,7 @@ $mq-base: 16;
  * - Usage: @include ko-respond-min-max(narrow, 600) { ... };
  */
 @mixin ko-respond-min-max($min-width, $max-width) {
+	@warn "This mixin will be deprecated soon, please use the include-media plugin for defining your media queries";
 	$min-width-em: ko-em(ko-strip-units(ko-bp($min-width)), $mq-base);
 	$max-width-em: ko-em(ko-strip-units(ko-bp($max-width)), $mq-base);
 

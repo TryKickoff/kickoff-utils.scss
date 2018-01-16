@@ -7,6 +7,10 @@
 
 ```
 npm install @kickoff/utils.scss --save
+
+or
+
+yarn add @kickoff/utils.scss
 ```
 
 ## Usage

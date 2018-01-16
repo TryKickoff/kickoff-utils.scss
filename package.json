@@ -2,7 +2,7 @@
   "name": "@kickoff/utils.scss",
   "title": "Kickoff Sass Functions and Mixins",
   "description": "Sass utility functions and mixins for the Kickoff framework",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "homepage": "http://trykickoff.com",
   "repo": "https://github.com/trykickoff/kickoff-utils.scss",
   "main": "index.scss",
@@ -10,7 +10,7 @@
   "authors": [
     {
       "name": "Zander Martineau",
-      "url": "http://martineau.tv"
+      "url": "https://zander.wtf"
     }
   ],
   "contributors": [
